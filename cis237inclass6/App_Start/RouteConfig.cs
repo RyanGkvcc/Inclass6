@@ -13,6 +13,14 @@ namespace cis237inclass6
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //Most specific to most generic url
+            routes.MapRoute(
+                name: "Foo",
+                url: "{controller}/foo",
+                defaults: new { controller = "Home", action = "About", id = UrlParameter.Optional }
+            );
+
+            //More generic url
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

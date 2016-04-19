@@ -17,6 +17,13 @@ namespace cis237inclass6.Controllers
         {
             ViewBag.Message = "Your application description page.";
 
+            //This is a dynamic object that can just have a proerty
+            //attached to it with a value. Here we made the 'key'
+            //WhateverIWantToPut, and the 'value' Some value.
+            //This ViewBag is available in the View. This is how we
+            //pass data from the controller to the view.
+            ViewBag.WhateverIWantToPut = "Some value";
+
             return View();
         }
 
