@@ -13,6 +13,11 @@ namespace cis237inclass6.Controllers
     [Authorize]
     public class CarController : Controller
     {
+        //ActionResult View
+        //ActionResult RedirectToAction
+        //ActionResult Content
+        //ActionResult Json
+
         private CarsRGowanEntities db = new CarsRGowanEntities();
 
         // GET: /Cars/
@@ -206,6 +211,11 @@ namespace cis237inclass6.Controllers
             //Redirect the user to the index page. We will do the work of actually
             //filtering the list in the index method.
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Json()
+        {
+            return Json(db.Cars.ToList(), JsonRequestBehavior.AllowGet);
         }
 
     }

@@ -37,6 +37,11 @@ namespace cis237inclass6
             //    defaults: new { controller = "Home", action = "Foo", id = UrlParameter.Optional }
             //);
 
+            routes.MapRoute(
+                name: "Json",
+                url: "api/{controller}/Json",
+                defaults: new { controller = "Car", action = "Json" }
+            );
  
             //More generic url
             routes.MapRoute(
@@ -44,6 +49,8 @@ namespace cis237inclass6
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            
         }
     }
 }
